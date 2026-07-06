@@ -161,7 +161,21 @@ async function startServer() {
           if (!room) return;
 
           const participants = roomParticipants.get(room.id) || [];
+if (action === 'ready') {
+  console.log("READY CLICKED", payload);
 
+  const { data, error } = await supabase!
+    .from('participants')
+    .update({
+      is_ready: payload.isReady
+    })
+    .eq('room_id', activeRoom.id)
+    .eq('user_id', userId)
+    .select();
+
+  console.log("UPDATE RESULT:", data);
+  console.log("UPDATE ERROR:", error);
+}
           if (action === 'ready') {
             const part = participants.find(p => p.userId === userId);
             if (part) {
