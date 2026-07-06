@@ -1,0 +1,6 @@
+{
+  "name": "Kids Center",
+  "description": "A Kahoot and Quizizz-style real-time math exam builder and testing platform for addition, subtraction, multiplication, and division.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
